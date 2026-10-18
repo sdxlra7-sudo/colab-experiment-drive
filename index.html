@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Colab Experiment Drive 是用于 Google Drive、本机与本人 Colab GPU 之间传输所选科研文件的个人工具。了解用途、权限与数据处理方式。">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>Colab Experiment Drive · 个人科研文件传输</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html" aria-label="Colab Experiment Drive 首页">Colab Experiment Drive</a>
+    <nav aria-label="主导航">
+      <a href="index.html" aria-current="page">应用介绍</a>
+      <a href="privacy.html">隐私政策</a>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="intro-title">
+      <p class="eyebrow">Personal research utility</p>
+      <h1 id="intro-title">为自己的实验，<br>传输自己选择的文件。</h1>
+      <p class="lead">Colab Experiment Drive 是一个在本机运行的个人科研工具，用于在 Google Drive、本机与本人使用的独立 Colab GPU 实例之间传输实验文件。</p>
+      <p class="intro-note">此页面用于说明应用用途与数据处理方式。网站本身不提供登录、上传或授权操作，也不会索取令牌或客户端密钥。</p>
+      <a class="text-link" href="privacy.html">阅读完整隐私政策 <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="section" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <p class="eyebrow">How it works</p>
+        <h2 id="workflow-title">文件经过本机，授权保留在本机。</h2>
+      </div>
+      <ol class="flow" aria-label="文件传输流程">
+        <li><span class="step-label">01 / Google Drive</span><h3>选择实验文件</h3><p>读取本人选择的既有数据、配置或实验文件；实验结果可作为新文件保存到本应用标记的目录。</p></li>
+        <li><span class="step-label">02 / 本机</span><h3>管理授权与传输</h3><p>首次通过 Google 授权后，刷新凭据保存在本机。后续由本机工具使用有效授权与 Drive 通信。</p></li>
+        <li><span class="step-label">03 / 本人 Colab GPU</span><h3>接收所选文件</h3><p>GPU 实例接收用户指定的实验文件；本工具不会把 Drive 刷新凭据或 OAuth 客户端密钥发送给 GPU。</p></li>
+      </ol>
+      <p class="caption">有效的本机授权可以被后续传输重复使用。授权被撤销或失效时，仍需重新授权。</p>
+    </section>
+
+    <section class="section" aria-labelledby="permissions-title">
+      <div class="section-heading">
+        <p class="eyebrow">Permissions</p>
+        <h2 id="permissions-title">为什么需要这两项 Drive 权限</h2>
+      </div>
+      <div class="permission-row">
+        <div><h3>读取既有文件</h3><code>drive.readonly</code></div>
+        <p>此 Google 权限允许读取获授权账号中的 Drive 文件。工具使用它读取用户选定的既有文件及必要元数据；权限本身并不限定到某一个文件夹。</p>
+      </div>
+      <div class="permission-row">
+        <div><h3>保存新的实验结果</h3><code>drive.file</code></div>
+        <p>用于新增和管理本应用创建的 Drive 文件。当前传输脚本进一步限定为只写入应用标记的目录，并采用新增文件的方式，不覆盖既有文件。</p>
+      </div>
+      <p class="caption">文件传输由用户发起。本工具不请求对整个 Drive 的完整读写权限。</p>
+    </section>
+
+    <section class="section support" aria-labelledby="control-title">
+      <div>
+        <p class="eyebrow">Your control</p>
+        <h2 id="control-title">授权与副本，由你管理。</h2>
+        <p>你可以在 Google 账号的第三方连接设置中撤销应用授权。撤销授权不会自动删除已产生的本机、Drive 或 Colab 文件副本；这些副本需要分别管理。</p>
+        <a class="text-link" href="https://myaccount.google.com/connections">打开 Google 账号第三方连接 <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="support-note">
+        <h3>联系与支持</h3>
+        <p>请使用 Google 授权页面显示的支持邮箱，或访问维护者的 GitHub 主页。联系时请勿发送令牌、密钥或私人实验数据。</p>
+        <a class="text-link" href="https://github.com/sdxlra7-sudo">维护者 GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p>Colab Experiment Drive · 个人科研工具</p>
+    <p><a href="privacy.html">隐私政策</a><span class="footer-divider" aria-hidden="true">/</span>Google Drive 与 Colab 由 Google 提供。本工具并非 Google 官方产品。</p>
+  </footer>
+</body>
+</html>

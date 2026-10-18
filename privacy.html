@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Colab Experiment Drive 的隐私政策：处理哪些文件与授权信息、如何使用和保存、服务提供方、撤销授权与删除副本。">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>隐私政策 · Colab Experiment Drive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html" aria-label="Colab Experiment Drive 首页">Colab Experiment Drive</a>
+    <nav aria-label="主导航">
+      <a href="index.html">应用介绍</a>
+      <a href="privacy.html" aria-current="page">隐私政策</a>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap policy">
+    <header class="policy-header">
+      <p class="eyebrow">Privacy policy</p>
+      <h1>隐私政策</h1>
+      <p class="policy-date">适用于 Colab Experiment Drive · 更新日期：<time datetime="2026-10-18">2026 年 10 月 18 日</time></p>
+      <p class="lead">本工具用于个人科研文件传输：由用户选择文件，在 Google Drive、本机与本人使用的独立 Colab GPU 实例之间传输。以下说明本机工具及此公开说明网站的数据处理方式。</p>
+    </header>
+
+    <section aria-labelledby="data-title">
+      <h2 id="data-title">1. 处理的信息</h2>
+      <p>本机工具为执行用户发起的传输操作，处理所选文件的内容，以及识别、传输和校验文件所需的元数据，例如文件名、文件标识、大小、所属目录与校验信息。</p>
+      <p>通过 Google OAuth 完成授权后，本机工具还会保存和使用访问令牌、刷新令牌及用户配置的 OAuth 客户端信息。这些信息用于与 Google Drive API 通信，不会作为实验文件传给 Colab GPU。</p>
+    </section>
+
+    <section aria-labelledby="scope-title">
+      <h2 id="scope-title">2. Google Drive 权限与用途</h2>
+      <dl class="scope-list">
+        <dt><code>https://www.googleapis.com/auth/drive.readonly</code></dt>
+        <dd>用于读取用户选择的既有 Drive 文件及必要元数据。该权限在 Google API 层面可以读取获授权账号的 Drive 文件，并非仅授权某个目录；工具按用户指定的传输任务使用它。</dd>
+        <dt><code>https://www.googleapis.com/auth/drive.file</code></dt>
+        <dd>用于新增和管理本应用创建的文件。当前传输脚本只允许写入带有本应用标记的目录，上传采用新增方式，不覆盖既有文件。</dd>
+      </dl>
+      <p>从 Google API 获得的信息仅用于本工具所说明的文件读取、传输、保存和校验功能。本工具不将这些信息出售，也不用于广告投放或用户画像。</p>
+    </section>
+
+    <section aria-labelledby="storage-title">
+      <h2 id="storage-title">3. 保存位置与保留时间</h2>
+      <p><strong>授权凭据：</strong>刷新凭据由本机工具保存在本机，供后续传输使用，不上传至此网站或 Colab GPU。凭据会保留至用户删除本机保存的凭据；Google 也可能使其失效。用户应保护本机账号、设备及其备份的访问权限。</p>
+      <p><strong>实验文件：</strong>执行传输可能在本机、Google Drive 和 Colab 实例中形成副本。这些副本会保留至用户分别删除，或相应服务按自身存储与运行时规则处理。停止工具或撤销授权不等于删除已经产生的文件副本。</p>
+      <p>本工具没有通过这个公开网站接收或集中保存用户实验文件的功能。</p>
+    </section>
+
+    <section aria-labelledby="providers-title">
+      <h2 id="providers-title">4. 数据传输与服务提供方</h2>
+      <p>Google 提供 OAuth 授权、Google Drive 存储与 API 服务，以及 Colab 计算环境。使用这些服务时，相应服务提供方会按其服务条款和隐私政策处理必要信息。用户选择发送到 Colab 的实验文件会进入 Google 提供的 Colab 环境。</p>
+      <p>本机工具在这些服务之间执行用户指定的文件传输，不另设用于收集实验文件的应用服务器。公开说明网站由网站托管服务提供方提供，托管方可能记录访问日志，例如 IP 地址、访问时间、请求路径及浏览器信息。</p>
+      <p>Google 服务的数据处理规则可在 <a href="https://policies.google.com/privacy">Google 隐私政策</a> 中查看。</p>
+    </section>
+
+    <section aria-labelledby="website-title">
+      <h2 id="website-title">5. 此说明网站</h2>
+      <p>此网站仅展示应用用途、权限说明与隐私政策，不提供账号登录、文件上传或 OAuth 授权入口，不索取密码、令牌、客户端密钥或实验文件。</p>
+      <p>网站页面不添加分析或追踪脚本，不设置 Cookie，不加载外部字体、图片或其他外部资源。点击 Google 或 GitHub 的链接后，你将访问相应服务，其数据处理规则由该服务提供方决定。上述网站说明不排除托管方为提供和保护网站而保留访问日志。</p>
+    </section>
+
+    <section aria-labelledby="revoke-title">
+      <h2 id="revoke-title">6. 撤销授权与删除数据</h2>
+      <ol class="plain-list">
+        <li>前往 <a href="https://myaccount.google.com/connections">Google 账号的第三方连接设置</a>，找到 Colab Experiment Drive 并撤销授权，以停止工具继续使用该授权访问 Drive。</li>
+        <li>如不再使用工具，分别删除本机保存的授权凭据及不再需要的本机文件副本。删除本机凭据不会自动撤销 Google 账号中的授权。</li>
+        <li>在 Google Drive 和相关 Colab 实例中分别管理或删除已传输文件。撤销授权或删除本机副本不会同步删除这些文件。</li>
+      </ol>
+      <p>重新使用本工具时，可以按需要重新授权。对于 Google 或托管服务保留的数据，应按相应服务提供方的规则处理。</p>
+    </section>
+
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">7. 联系与政策更新</h2>
+      <p>如有关于本应用或其数据处理的问题，请使用 Google 授权页面显示的支持邮箱，或访问维护者的 <a href="https://github.com/sdxlra7-sudo">GitHub 主页</a>。请勿在公开页面、问题反馈或消息中发送令牌、密钥或私人实验数据。</p>
+      <p>如果工具的用途、权限或数据处理方式发生变化，本政策会相应更新，并在页面顶部注明更新日期。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p>Colab Experiment Drive · 个人科研工具</p>
+    <p><a href="index.html">返回应用介绍</a><span class="footer-divider" aria-hidden="true">/</span>本工具并非 Google 官方产品。</p>
+  </footer>
+</body>
+</html>
